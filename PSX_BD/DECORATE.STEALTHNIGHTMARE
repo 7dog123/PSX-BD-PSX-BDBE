@@ -1,0 +1,13 @@
+ACTOR BrutalStealthNightmareImp : Imp 3007
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+}
+
+ACTOR BrutalStealthNightmareSpectre : Demon 3000
+{
+	+STEALTH
+	RenderStyle Translucent
+	Alpha 0
+}

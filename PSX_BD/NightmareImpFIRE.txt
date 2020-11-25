@@ -1,0 +1,172 @@
+ACTOR FlameTrails3
+{
+	Game Doom
+	Radius 1
+	Height 1
+	Speed 3
+	Damage 0 
+    +NOBLOCKMAP
+    +NOTELEPORT
+    +DONTSPLASH
+	+MISSILE
+	+FORCEXYBILLBOARD
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+	+NOCLIP
+	RenderStyle Add
+	RenderStyle Subtract
+    DamageType Flames
+    Scale 0.5
+	Alpha 1
+	Gravity 0
+	States
+	{
+    Spawn:
+        TNT1 A 2
+        FRPR ABCDEFGH 3 BRIGHT
+        Stop
+	}
+}
+
+ACTOR FastSmallFlameTrails2
+{
+	Game Doom
+	Radius 1
+	Height 1
+	Speed 3
+	Damage 0 
+    +NOBLOCKMAP
+    +NOTELEPORT
+    +DONTSPLASH
+	+MISSILE
+	+FORCEXYBILLBOARD
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+	RenderStyle Add
+	RenderStyle Subtract
+    DamageType Flames
+    Scale 0.3
+	Alpha 1
+	Gravity 0
+	States
+	{
+    Spawn:
+        TNT1 A 2
+        FRPR ABCDEFGH 1 BRIGHT
+        Stop
+	}
+}
+
+ACTOR SmallFlameTrails2: FlameTrails3
+{
+
+    Scale 0.3
+	RenderStyle Subtract
+	States
+	{
+    Spawn:
+        TNT1 A 2
+        FRPR ABCDEFGH 3 BRIGHT
+        Stop
+		}
+}
+
+ACTOR FireballExplosionFlames2: FlameTrails3
+{
+    Scale 0.8
+	Speed 1
+	RenderStyle Subtract
+	States
+	{
+    Spawn:
+        FIR3 CDEFGHIJKLMNOP 1 BRIGHT
+        Stop
+	}
+}
+
+ACTOR NightImBallGettingReady: FastSmallFlameTrails2
+{
+    Scale 1.3
+	RenderStyle Subtract
+	States
+	{
+    Spawn:
+        FRFX AB 1 BRIGHT
+        Stop
+	}
+}
+
+
+ACTOR CoolandNewFlameTrails2: FlameTrails3
+{
+    Scale 0.3
+	Speed 1
+	RenderStyle Subtract
+	States
+	{
+    Spawn:
+	    TNT1 A 2
+        FIR3 JMP 1 BRIGHT
+        Stop
+	}
+}
+
+ACTOR TinyBurningPiece4: BarrelExplosionSmokeColumn2
+{
+Damagetype "Fire"
+    -CLIENTSIDEONLY
+	Alpha 0.9
+	RenderStyle Add
+	Renderstyle Subtract
+	Scale 1.1
+	States
+	{
+	Spawn:
+	
+	CFCF ABC 1 BRIGHT// A_SpawnItem("RedFlareSmall2", 0, 5)
+	CFCF D 1
+	TNT1 A 0 A_Explode(2, 60)
+	CFCF EFG 1 BRIGHT// A_SpawnItem("RedFlareSmall2", 0, 5)
+	CFCF H 1
+	CFCF IJK 1 BRIGHT// A_SpawnItem("RedFlareSmall2", 0, 5)
+	CFCF L 1
+	TNT1 A 0 A_Jump(24, "StopBurning")
+	Loop
+	
+	StopBurning:
+	CFCF NOP 1 BRIGHT A_SpawnItem("RedFlareSmall2", 0, 5)
+	Stop
+    }
+}
+
+
+ACTOR TinyBurningPiece5: TinyBurningPiece4
+{
+	Scale 0.7
+	+CLIENTSIDEONLY
+	Renderstyle Subtract
+	States
+	{
+	Spawn:
+	
+	CFCF ABC 1 BRIGHT// A_SpawnItem("RedFlareSmall2", 0, 5)
+	CFCF D 1
+	CFCF EFG 1 BRIGHT// A_SpawnItem("RedFlareSmall2", 0, 5)
+	CFCF H 1
+	CFCF IJK 1 BRIGHT// A_SpawnItem("RedFlareSmall2", 0, 5)
+	CFCF L 1
+	TNT1 A 0 A_Jump(24, "StopBurning")
+	Loop
+	
+	StopBurning:
+	CFCF NOP 1 BRIGHT A_SpawnItem("RedFlareSmall2", 0, 5)
+	Stop
+    }
+}
+
+ACTOR TinyBurningPiece6: TinyBurningPiece5
+{
+	Scale 0.5
+	+CLIENTSIDEONLY
+	Renderstyle Subtract
+}

@@ -1,0 +1,28 @@
+ACTOR BarrelExplosionSmokeColumn2
+{
+    Radius 0
+    Height 0
+	Alpha 0.4
+	RenderStyle Translucent
+	RenderStyle Subtract
+	//Scale 0.4
+	//Scale 0.8
+	XScale 1.4
+    +NOBLOCKMAP
+    +NOTELEPORT
+    +DONTSPLASH
+	+CLIENTSIDEONLY
+	Damage 0
+    States
+    {
+    Spawn:
+	    SB17 E 4
+	    TNT1 A 0 A_JumpIf(waterlevel > 1, "Stap")
+		SB17 ABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCD 5
+		SB17 E 4
+		Stop
+Stap:		
+TNT1 A 0
+Stop
+    }
+}

@@ -1,0 +1,86 @@
+// Decorate
+#Include "NightmareSpectre.txt"
+#Include "PSXBloodyChain.txt"
+#Include "NightmareGore.txt"
+#Include "NightmareGore2.txt"
+//#Include "NightmareBlood.txt"
+#Include "NightmareImps.txt"
+#Include "NightmareimpSMOKE.TXT"
+#Include "NightmareimpFire.txt"
+#Include "NightmareimpFlares.txt"
+#Include "SPAWNERSCRIPT.txt"
+#Include "PSXPartical.txt"
+#Include "NIGHTIMPSHIELD.TXT"
+#include "NightmareFrozen.txt"
+#include "NightmareExecutions.txt"
+#include "BURNNIGHTMARE.txt"
+#include "DyingNightmare.txt"
+#include "VanillaNightmare.txt"
+#include "NightmareImpFish.txt"
+
+// Tokens
+
+/*Actor EatMe2 : Inventory
+{
+inventory.maxamount 1
+}*/
+
+Actor NightmareBleedingOut : Inventory
+{
+inventory.maxamount 50
+}
+
+Actor ComeEatMeNightmare : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor HasNightImpShield : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor SKNightImp : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor NightmareImpFatality : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor NightmareImpFatality2 : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor NightmareFatality : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor NightmareFatality2 : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor NightmareFatality3 : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor GrabbedANightmareImp : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor ExecuteDownedNightmareImp : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor IsFinalDoom : Inventory
+{
+inventory.maxamount 1
+}
