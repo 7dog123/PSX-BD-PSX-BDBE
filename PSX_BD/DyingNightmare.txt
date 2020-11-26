@@ -1,6 +1,6 @@
 ACTOR PoorNightmareLostHisArm: NightmareSpectre
 {
-	Renderstyle Subtract
+	RenderStyle Subtract 
 	Health 50
 	+NOPAIN
 	-COUNTKILL
@@ -32,7 +32,7 @@ ACTOR PoorNightmareLostHisArm: NightmareSpectre
 	Death.Fatality:
 	TNT1 A 0
 		TNT1 A 0 A_FaceTarget
-		TNT1 A 0 A_SpawnItem("BloodSplasher2")
+		
 		 TNT1 AAAA 0 A_CustomMissile ("SmallBrainPiece", 60, 0, random (0, 360), 2, random (0, 160))
 		 TNT1 AA 0 A_CustomMissile ("XDeath3", random (45, 55), random (5, -5), random (160, 200), 2, random (-10, 10))
 		 TNT1 AA 0 A_CustomMissile ("XDeath2", random (45, 55), random (5, -5), random (160, 200), 2, random (-10, 10))
@@ -44,7 +44,7 @@ ACTOR PoorNightmareLostHisArm: NightmareSpectre
 		SAAR GGGGGGG 2 A_CustomMissile ("Brutal_LiquidBlood", 40, 0, random (0, 360), 2, random (30, 110))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream 
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Health")
+		TNT1 A 0 A_SpawnItem ("HealthPlusFatalityBonus")
 		SAAR HHHHHHHHH 2 A_CustomMissile ("Brutal_LiquidBlood", 30, 0, random (0, 360), 2, random (30, 110))
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		SAAR IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII 2 A_CustomMissile ("Brutal_LiquidBlood", 20, 0, random (0, 360), 2, random (30, 110))
@@ -60,7 +60,7 @@ ACTOR PoorNightmareLostHisArm: NightmareSpectre
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		Stop
 }
-}
+
 
 ACTOR DyingNightmareImp
 {
@@ -75,7 +75,7 @@ ACTOR DyingNightmareImp
 	+SHOOTABLE
 	-SOLID
 	+THRUACTORS
-	
+	-COUNTKILL
 	+FLOORCLIP
 	damagefactor "Crush", 50.0
 	Scale 1.0
@@ -169,7 +169,7 @@ Stop
         TNT1 A 0
 		TNT1 A 0 A_Scream
         TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Health")
+		TNT1 A 0 A_SpawnItem ("HealthPlusFatalityBonus")
 		TROO JJJJ 2 A_CustomMissile ("FlameTrails", 45, 0, random (0, 360), 2, random (50, 130))
 		TROO KKKK 2 A_CustomMissile ("FlameTrails", 30, 0, random (0, 360), 2, random (50, 130))
 		TROO LLLL 2 A_CustomMissile ("FlameTrails", 25, 0, random (0, 360), 2, random (50, 130))
@@ -187,8 +187,8 @@ Stop
 		TNT1 O 0 A_NoBlocking
         TNT1 A 0 A_CustomMissile ("XDeath1", 40, 0, random (0, 360), 2, random (0, 160))
 		TROG A 2 A_CustomMissile ("RipNightmareImp", 0, 0, random (0, 360), 2, random (0, 160))
-        TROG AAA 4 A_SpawnItem ("Big_Blood", 0, 30)
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Health")
+        TROG AAA 4 A_SpawnItem ("MuchBlood", 0, 30)
+		TNT1 A 0 A_SpawnItem ("HealthPlusFatalityBonus")
 	    TROG BCDEFGH 8
          TNT1 A 1 A_SpawnItem ("DeadNightmareImp_Half", 5)
 		//TROG H -1
@@ -197,7 +197,7 @@ Stop
 
 	Death.SSG:
         //TNT1 A 0 A_CustomMissile ("MeatDeath", 0, 0, random (0, 360), 2, random (0, 160))
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Health")
+		TNT1 A 0 A_SpawnItem ("HealthPlusFatalityBonus")
 		TNT1 AA 0 A_CustomMissile ("XDeath1", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 A 0 A_CustomMissile ("XDeath2", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 A 0 A_CustomMissile ("XDeath3", 32, 0, random (170, 190), 2, random (0, 40))
@@ -216,20 +216,14 @@ Stop
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
         Stop
 		
-		Death.Fatality:
-		Death.SuperPunch:
-		Death.ExtremePunches:
-        TNT1 A 0 A_NoBlocking
-        TNT1 A 0 A_GiveToTarget("HasNightImpShield", 1)
-		TNT1 A 0 A_GiveToTarget("GotMeatShield", 1)
-        Stop
+
 		
 	Death.Shotgun:
 	Death.Blast:
 	Death.Railgun:
 	    TNT1 A 0 A_XScream
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Health")
-		TNT1 AAA 0 A_CustomMissile ("Instestin", 32, 0, random (150, 210), 2, random (0, 40))
+		TNT1 A 0 A_SpawnItem ("HealthPlusFatalityBonus")
+		TNT1 AAA 0 A_CustomMissile ("Guts", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("XDeath1", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 A 0 A_CustomMissile ("XDeathNightmareImpArm", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 A 0 A_CustomMissile ("XDeathNightmareImpHead", 32, 0, random (150, 210), 2, random (0, 40))
@@ -250,6 +244,7 @@ Stop
 ACTOR DyingNightmareImpNoHeadContinue: DyingNightmareImp
 {
 Renderstyle Subtract
+Damagefactor "Head", 0.0
 	States
 	{
     Spawn:
@@ -257,7 +252,7 @@ Renderstyle Subtract
 		TNT1 A 0 A_XScream
         IMPC JJJJJJJJJJJJJJJJJJJ 2 A_CustomMissile ("Brutal_LiquidBlood", 32, 0, random (0, 360), 2, random (0, 45))
 		IMPC KKKK 2 A_CustomMissile ("Brutal_LiquidBlood", 16, 0, random (0, 360), 2, random (0, 45))
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Health")
+		TNT1 A 0 A_SpawnItem ("HealthPlusFatalityBonus")
 		IMPC LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL 2 A_CustomMissile ("Brutal_LiquidBlood", 12, 0, random (0, 360), 2, random (0, 45))
         TNT1 A 0 A_SpawnItem("DeadNightmareImp_NoStomachNoHead")
 		TNT1 A 0 A_NoBlocking
@@ -271,8 +266,8 @@ Renderstyle Subtract
 		TNT1 O 0 A_NoBlocking
         TNT1 A 0 A_CustomMissile ("XDeath1", 40, 0, random (0, 360), 2, random (0, 160))
 		TROG A 2 A_CustomMissile ("RipNightmareImp", 0, 0, random (0, 360), 2, random (0, 160))
-        TROG AAA 4 A_SpawnItem ("Big_Blood", 0, 30)
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Health")
+        TROG AAA 4 A_SpawnItem ("MuchBlood", 0, 30)
+		TNT1 A 0 A_SpawnItem ("HealthPlusFatalityBonus")
 	    TROG BCDEFGH 8
          TNT1 A 1 A_SpawnItem ("DeadNightmareImp_Half", 5)
 		//TROG H -1
@@ -284,7 +279,7 @@ Renderstyle Subtract
 	Death.Blast:
 	Death.Railgun:
         //TNT1 A 0 A_CustomMissile ("MeatDeath", 0, 0, random (0, 360), 2, random (0, 160))
-		TNT1 AA 0 A_SpawnItem ("CrueltyBonus5Health")
+		TNT1 AA 0 A_SpawnItem ("HealthPlusFatalityBonus")
 		TNT1 AA 0 A_CustomMissile ("XDeath1", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 A 0 A_CustomMissile ("XDeath2", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 A 0 A_CustomMissile ("XDeath3", 32, 0, random (170, 190), 2, random (0, 40))
@@ -303,20 +298,14 @@ Renderstyle Subtract
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
         Stop
 		
-		Death.Fatality:
-		Death.SuperPunch:
-		Death.ExtremePunches:
-        TNT1 A 0 A_NoBlocking
-        TNT1 A 0 A_GiveToTarget("HasNightImpShield", 1)
-		TNT1 A 0 A_GiveToTarget("GotMeatShield", 1)
-        Stop
+	
 		
 	Death:
 	Death.Minigun:
 	Death.Shotgun:
 	    TNT1 A 0 A_XScream
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Health")
-		TNT1 AAA 0 A_CustomMissile ("Instestin", 32, 0, random (150, 210), 2, random (0, 40))
+		TNT1 A 0 A_SpawnItem ("HealthPlusFatalityBonus")
+		TNT1 AAA 0 A_CustomMissile ("Guts", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("XDeath1", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 A 0 A_CustomMissile ("XDeathNightmareImpArm", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("Xdeath3", 16, 0, random (170, 190), 2, random (0, 40))
@@ -339,11 +328,9 @@ Renderstyle Subtract
 	}
 }
 
-
-
-
 ACTOR DyingNightmareImpNoHeadClean: DyingNightmareImp
-{Renderstyle Subtract
+{
+Renderstyle Subtract
 DamageFactor "Head", 0.0
 	States
 	{
@@ -365,7 +352,8 @@ DamageFactor "Head", 0.0
 
 
 ACTOR DyingNightmareImpHalfFace: DyingNightmareImp
-{Renderstyle Subtract
+{
+Renderstyle Subtract
 	States
 	{
     Spawn:
@@ -407,7 +395,8 @@ ACTOR DyingNightmareImpHalfFace: DyingNightmareImp
 
 
 ACTOR DyingNightmareImpNoHeadLikeChicken: DyingNightmareImp
-{Renderstyle Subtract
+{
+	Renderstyle Subtract
 	States
 	{
     Spawn:
@@ -442,7 +431,7 @@ ACTOR DyingNightmareImpNoHeadLikeChicken: DyingNightmareImp
 		Death.Shotgun:
 		TROH A 1
 		TNT1 A 0 A_XScream
-		TNT1 A 0 A_SpawnItem("RipGuts", 0, 20)
+		TNT1 A 0 A_SpawnItem("RipGuts")
 		TNT1 A 0 A_SpawnItem("DyingNightmareImpNoHeadContinue")
 Stop
 	}
@@ -450,7 +439,8 @@ Stop
 
 
 ACTOR DyingNightmareImpNoHeadNoArmContinue: DyingNightmareImp
-{Renderstyle Subtract
+{
+	Renderstyle Subtract
 	States
 	{
     Spawn:
@@ -475,7 +465,7 @@ ACTOR DyingNightmareImpNoHeadNoArmContinue: DyingNightmareImp
 		TNT1 A 0
 		TNT1 A 0 A_FaceTarget
         //TNT1 A 0 A_CustomMissile ("MeatDeath", 0, 0, random (0, 360), 2, random (0, 160))
-		TNT1 AA 0 A_SpawnItem ("CrueltyBonus5Health")
+		TNT1 AA 0 A_SpawnItem ("HealthPlusFatalityBonus")
 		TNT1 AA 0 A_CustomMissile ("XDeath1", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 A 0 A_CustomMissile ("XDeath2", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 A 0 A_CustomMissile ("XDeath3", 32, 0, random (170, 190), 2, random (0, 40))
@@ -510,16 +500,11 @@ ACTOR BrutalizedNightmareImp1
 	-SOLID
 	+SHOOTABLE
 	+NORADIUSDMG
+	-COUNTKILL
 	Scale 1.0
 	States
 	{
-		Death.Fatality:
-		Death.SuperPunch:
-        TNT1 A 0 A_NoBlocking
-        TNT1 A 0 A_GiveToTarget("HasNightImpShield", 1)
-		TNT1 A 0 A_GiveToTarget("GotMeatShield", 1)
-        Stop
-		
+	
 	Spawn:
 	TNT1 A 0
 	TNT1 A 0 A_Recoil(2)
@@ -536,16 +521,7 @@ ACTOR BrutalizedNightmareImp1
 	
 	Death:
 	    TNT1 A 0
-		TNT1 AAAA 0 A_CustomMissile ("Brains1", 50, 0, random (0, 360), 2, random (0, 160))
-		TNT1 A 0 A_CustomMissile ("Brains2", 50, 0, random (0, 360), 2, random (0, 160))
-		TNT1 A 0 A_CustomMissile ("Brains3", 50, 0, random (0, 360), 2, random (0, 160))
-		TNT1 A 0 A_CustomMissile ("Brains6", 50, 0, random (0, 360), 2, random (0, 160))
-		TNT1 A 0 A_CustomMissile ("Brains7", 50, 0, random (0, 360), 2, random (0, 160))
-		TNT1 AAAA 0 A_CustomMissile ("SmallBrainPieceFast", random (45, 55), random (5, -5), random (170, 190), 2, random (-10, 10))
-		TNT1 AAAA 0 A_CustomMissile ("SmallBrainPiece", 50, 0, random (0, 360), 2, random (0, 160))
-		TNT1 AA 0 A_CustomMissile ("SuperWallRedBlood", 46, 0, random (170, 190), 2, random (0, 40))
-        TNT1 AAAAAAAAAAA 0 A_CustomMissile ("BrainBlood", 50, 0, random (0, 360), 2, random (0, 160))
-		TNT1 AA 0 A_CustomMissile ("XDeath1", 40, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_SpawnItem("NightmareImpHeadExplode", 0, 50)
 		TNT1 A 0 A_Recoil(2)
 	    IZD1 B 4
 		TNT1 A 0
@@ -562,7 +538,8 @@ ACTOR BrutalizedNightmareImp1
 }}
 
 actor BrutalizedNightmareImpStop: CurbstompedMarine
-{Renderstyle Subtract
+{
+	Renderstyle Subtract
     damagefactor "Blood", 0.0
     damagefactor "Trample", 0.0
     damagefactor "Melee", 10.0
@@ -589,7 +566,8 @@ TNT1 A 0 A_SpawnItem("DeadNightmareImpIZD3D")
 	   }}
 
 ACTOR BrutalizedNightmareImp2: BrutalizedSergeant1
-{Renderstyle Subtract
+{
+	Renderstyle Subtract
 	States
 	{
 	Spawn:
@@ -612,18 +590,13 @@ ACTOR BrutalizedNightmareImp2: BrutalizedSergeant1
 		TNT1 A 0 A_SpawnItem ("BrutalizedNightmareImp3")
 		Stop
 	
-		Death.Fatality:
-		Death.SuperPunch:
-        TNT1 A 0 A_NoBlocking
-        TNT1 A 0 A_GiveToTarget("HasNightImpShield", 1)
-		TNT1 A 0 A_GiveToTarget("GotMeatShield", 1)
-		Stop
-		
+	
 
 }}
 
 actor BrutalizedNightmareImpStop2: BrutalizedNightmareImpStop
-{Renderstyle Subtract
+{
+	Renderstyle Subtract
     States
     {
     Spawn:
@@ -645,7 +618,8 @@ TNT1 A 0 A_SpawnItem("DeadNightmareImpIZD3D")
 	   }}
 
 ACTOR BrutalizedNightmareImp3: BrutalizedNightmareImp1
-{Renderstyle Subtract
+{
+	Renderstyle Subtract
 	States
 	{
 	Spawn:
@@ -661,14 +635,10 @@ ACTOR BrutalizedNightmareImp3: BrutalizedNightmareImp1
 	Death:
 	    TNT1 A 0
 		TNT1 A 0 A_Recoil(2)
-		TNT1 A 0 A_SpawnItem("BloodSplasher2")
-	    TNT1 AA 0 A_CustomMissile ("XDeath1", 40, 0, random (0, 360), 2, random (0, 160))
-TNT1 AA 0 A_CustomMissile ("XDeath3b", 40, 0, random (0, 360), 2, random (0, 160))
-		TNT1 A 0 A_CustomMissile ("XDeath4", 40, 0, random (0, 360), 2, random (0, 160))
-		TNT1 A 0 A_CustomMissile ("XDeath2b", 40, 0, random (0, 360), 2, random (0, 160))
-		TNT1 AAAAAA 0 A_CustomMissile ("Brutal_LiquidBlood", 44, 0, random (0, 360), 2, random (0, 50))
+	    TNT1 A 0 A_SpawnItem("MeatDeath")
+		TNT1 A 0 A_SpawnItem("RipGuts")
 		IZD1 EFGH 6
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Health")
+		TNT1 A 0 A_SpawnItem ("HealthPlusFatalityBonus")
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
 		TNT1 A 0 A_SpawnItem("DeadNightmareImpIZD1H")
 		Stop
@@ -676,7 +646,8 @@ TNT1 AA 0 A_CustomMissile ("XDeath3b", 40, 0, random (0, 360), 2, random (0, 160
 
 
 actor BrutalizedNightmareImpStop3: BrutalizedNightmareImpStop
-{Renderstyle Subtract
+{
+	Renderstyle Subtract
     States
     {
     Spawn:
@@ -699,11 +670,11 @@ TNT1 A 0 A_SpawnItem("GrowingBloodPool")
 	   
 		
 ACTOR ThisNightmareImpGotFuckedHard: DeadNightmareImpID17G
-{Renderstyle Subtract Health 200 
+{
+	Renderstyle Subtract
+	Health 200 
 }
-		
-	
-	
+
 ACTOR NightmareImpBrutalizedWithNoLeg
 {
 	Game Doom
@@ -716,6 +687,7 @@ ACTOR NightmareImpBrutalizedWithNoLeg
 		Mass 999999
 	-SOLID
 	+SHOOTABLE
+	-COUNTKILL
 	Scale 1.0
 	States
 	{
@@ -748,18 +720,10 @@ TNT1 A 0
     TNT1 AA 0 A_CustomMissile ("XDeath1", 40, 0, random (0, 360), 2, random (0, 160))
 	TNT1 A 0 ThrustThingZ(0,30,0,1)
 	    ID17 ABCDEF 5
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Armor")
+		TNT1 A 0 A_SpawnItem ("ArmorShardFatalityBonus")
 		TNT1 A 0 A_SpawnItem ("ThisNightmareImpGotFuckedHard")
 		Stop
 }}
-
-
-
-
-
-
-
-
 
 ACTOR DyingNightmareImpNoArm
 {
@@ -775,6 +739,7 @@ ACTOR DyingNightmareImpNoArm
 	+SHOOTABLE
 	//MONSTER
 	+GHOST
+	-COUNTKILL
 	+THRUGHOST
 	Scale 1.0
 	States
@@ -845,7 +810,7 @@ ACTOR DyingNightmareImpNoArm
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
         TR08 F 8
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Health")
+		TNT1 A 0 A_SpawnItem ("HealthPlusFatalityBonus")
         TNT1 A 0 A_SpawnItem ("DeadNightmareImp_NoArmNoHead", 1)
 Stop
 
@@ -854,7 +819,7 @@ Stop
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_FaceTarget
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Health")
+		TNT1 A 0 A_SpawnItem ("HealthPlusFatalityBonus")
 		TNT1 AAA 0 A_CustomMissile ("XDeath1", 42, 0, random (170, 190), 2, random (10, 60))
 		TNT1 AAA 0 A_CustomMissile ("XDeath3", 42, 0, random (170, 190), 2, random (10, 60))
 		TNT1 A 0 A_CustomMissile ("XDeath2", 42, 0, random (170, 190), 2, random (10, 60))
@@ -867,8 +832,8 @@ Stop
 	Death.Blast:
 	Death.Railgun:
 	    TNT1 A 0 A_XScream
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Health")
-		TNT1 AAA 0 A_CustomMissile ("Instestin", 32, 0, random (150, 210), 2, random (0, 40))
+		TNT1 A 0 A_SpawnItem ("HealthPlusFatalityBonus")
+		TNT1 AAA 0 A_CustomMissile ("Guts", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("XDeath1", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 A 0 A_CustomMissile ("XDeathNightmareImpHead", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 A 0 A_CustomMissile ("XDeathNightmareImpArm", 32, 0, random (150, 210), 2, random (0, 40))
@@ -888,8 +853,6 @@ Stop
 }
 }
 
-
-
 ACTOR DyingNightmareImpNoLeg
 {
 	Game Doom
@@ -901,6 +864,7 @@ ACTOR DyingNightmareImpNoLeg
 		PainChance 255
 		Mass 999999
 	-SOLID
+	-COUNTKILL
 	+SHOOTABLE
 	Scale 1.0
 	States
@@ -970,23 +934,22 @@ ACTOR DyingNightmareImpNoLeg
 		TNT1 A 0 A_NoBlocking
         TR09 I 8
         TNT1 A 0 A_SpawnItem ("DeadNightmareImp_Noleg", 1)
-		TNT1 A 0 A_SpawnItem ("CrueltyBonus5Health")
+		TNT1 A 0 A_SpawnItem ("HealthPlusFatalityBonus")
 Stop
 }
 }
 
-
-
-
-
 ACTOR NightmareImpDyingOfBloodLoss : NightmareImp
-{Renderstyle Subtract
+{
+	Renderstyle Subtract
 	Radius 16
 	Height 28
 	Health 10
 	+NOPAIN
 	-COUNTKILL
 	+SHOOTABLE
+	-COUNTKILL
+	Damagefactor "Stealth", 0.0
 	States
 	{
 	Spawn:
@@ -1014,7 +977,8 @@ ACTOR NightmareImpDyingOfBloodLoss : NightmareImp
 }
 
 ACTOR NightmareImpSaciLol: DyingNightmareImpNoLeg
-{Renderstyle Subtract
+{
+	Renderstyle Subtract
 //MONSTER
 +GHOST
 	+THRUGHOST
