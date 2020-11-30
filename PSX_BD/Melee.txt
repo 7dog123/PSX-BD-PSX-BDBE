@@ -62,7 +62,7 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 		TNT1 A 0 A_JumpIfInTargetInventory("SKNazi",1, "StealthAttack")
 		TNT1 A 0 A_JumpIfInTargetInventory("SKLabguy",1, "StealthAttack")
 		TNT1 A 0 A_JumpIfInTargetInventory("SKImp",1, "StealthAttack")
-		TNT1 A 0 A_JumpIfInTargetInventory("SKNightImp",1, "StealthAttack")
+		TNT1 A 0 A_JumpIfInTargetInventory("SKNightmareImp",1, "StealthAttack")
 		pong A 1
 		TNT1 A 0 A_JumpIfInventory("PowerStrength",1, "GrabCheckDist")
 		TNT1 A 0 A_JumpIfCloser(150, "StealthAttack")
@@ -78,7 +78,7 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 		TNT1 A 0 A_JumpIfInTargetInventory("SKNazi",1, "StealthAttack")
 		TNT1 A 0 A_JumpIfInTargetInventory("SKLabguy",1, "StealthAttack")
 		TNT1 A 0 A_JumpIfInTargetInventory("SKImp",1, "StealthAttack")
-		TNT1 A 0 A_JumpIfInTargetInventory("SKNightImp",1, "StealthAttack")
+		TNT1 A 0 A_JumpIfInTargetInventory("SKNightmareImp",1, "StealthAttack")
 		pong A 1
 		TNT1 A 0 A_JumpIfInventory("PowerStrength",1, "GrabAttack")
 		TNT1 A 0 A_JumpIfCloser(150, "StealthAttack")
@@ -127,7 +127,7 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 		TNT1 A 0 A_JumpIfInventory("GrabbedAEvilMarine",1,"PickEvilMarine")
 		TNT1 A 0 A_JumpIfInventory("GrabbedANazi",1,"PickNazi")
 		TNT1 A 0 A_JumpIfInventory("GrabbedAImp",1,"PickImp")
-		TNT1 A 0 A_JumpIfInventory("GrabbedANightmareImp",1,"PickNightImp")
+		TNT1 A 0 A_JumpIfInventory("GrabbedANightmareImp",1,"PickNightmareImp")
 		PKUP E 1
 		PKUP FG 2
 		TNT1 A 0 A_JumpIfInventory("HasBarrel",1,"PickBarrel")
@@ -138,7 +138,7 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 		TNT1 A 0 A_JumpIfInventory("GrabbedAEvilMarine",1,"PickEvilMarine")
 		TNT1 A 0 A_JumpIfInventory("GrabbedANazi",1,"PickNazi")
 		TNT1 A 0 A_JumpIfInventory("GrabbedAImp",1,"PickImp")
-		TNT1 A 0 A_JumpIfInventory("GrabbedANightmareImp",1,"PickNightImp")
+		TNT1 A 0 A_JumpIfInventory("GrabbedANightmareImp",1,"PickNightmareImp")
 		
 		Goto Ready
 	
@@ -281,7 +281,7 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 		TNT1 A 0 A_JumpIfInventory("GrabbedAEvilMarine",1,"ThrowEvilMarine")
 		TNT1 A 0 A_JumpIfInventory("GrabbedANazi",1,"ThrowNazi")
 		TNT1 A 0 A_JumpIfInventory("GrabbedAImp",1,"ThrowImp")
-		TNT1 A 0 A_JumpIfInventory("GrabbedANightmareImp",1,"ThrowNightImp")
+		TNT1 A 0 A_JumpIfInventory("GrabbedANightmareImp",1,"ThrowNightmareImp")
 		TNT1 A 0 A_SetCrosshair(0)
 		TNT1 AAAAAAAAAAAAAAAAAA 0 A_Lower
 		TNT1 A 1 A_Lower
@@ -333,7 +333,7 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 		TNT1 A 0 A_JumpIfInventory("GrabbedAEvilMarine",1,"ShieldEvilMarine")
 		TNT1 A 0 A_JumpIfInventory("GrabbedANazi",1,"ShieldNazi")
 		TNT1 A 0 A_JumpIfInventory("GrabbedAImp",1,"ShieldImp")
-		TNT1 A 0 A_JumpIfInventory("GrabbedANightmareImp",1,"ShieldNightImp")
+		TNT1 A 0 A_JumpIfInventory("GrabbedANightmareImp",1,"ShieldNightmareImp")
 		TNT1 A 0 A_jumpifinventory("LostSoulFatality",1,"LSFire")
 		TNT1 A 0 A_JumpIfInventory("HasBarrel",1,"AltFireBarrel")
 		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"PowerCross")
@@ -947,7 +947,7 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 		TNT1 A 0 A_GiveInventory("ImpShield",1)
 		GRZ8 A 1 offset(0,40)
 		GRZ8 A 1 offset(0,48)
-		TNT1 A 0 A_SelectWeapon("NightImpShield")
+		TNT1 A 0 A_SelectWeapon("NightmareImpShield")
 		TNT1 A 1 A_WeaponReady(WRF_NOFIRE)
 		Goto Ready
 		
@@ -966,24 +966,24 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 	//---------------------------------------------------Imp End
 	
 	//Nightmare Start	----------------------------------------	
-	PickNightImp:	
+	PickNightmareImp:	
 		TNT1 A 0
 		GRZ8 C 1 offset(12, 32)
 		GRZ8 C 1 offset(6, 32)
 		GRZ8 C 1  A_WeaponReady(WRF_NOSWITCH)
 		TNT1 A 0
-		TNT1 A 0 A_JumpIfInventory("MeatAmmo", 60, "NightImpDie")
+		TNT1 A 0 A_JumpIfInventory("MeatAmmo", 60, "NightmareImpDie")
 		TNT1 A 0 A_SpawnItemEx("MeatShield", 15, 0, 15, 0)
 		GRZ8 A 3 A_WeaponReady(WRF_NOSWITCH)
 		TNT1 A 0 A_Jump(20, 2)
-		Goto PickNightImp+5
+		Goto PickNightmareImp+5
 		TNT1 AAAA 0
 		GRZ8 ABACACA 4 A_WeaponReady(WRF_NOSWITCH)
-		Goto PickNightImp+5
+		Goto PickNightmareImp+5
 	
-	ThrowNightImp:
+	ThrowNightmareImp:
 		TNT1 A 0
-		TNT1 A 0 A_JumpIfHealthLower(1, "NightImpDie")
+		TNT1 A 0 A_JumpIfHealthLower(1, "NightmareImpDie")
 		GRZ8 D 1 offset(-4, 32)
 		GRZ8 D 1 offset(-9, 33)
 		GRZ8 D 1 offset(-16, 34)
@@ -994,10 +994,10 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 		GRZ8 B 1 offset(-9, 33)
 		GRZ8 B 1 offset(-1, 32)
 		TNT1 A 0 A_PlaySound("skeleton/swing")
-		TNT1 A 0 A_FireCustomMissile("ThrowedNightImp", 0, 0, 0, 0)
+		TNT1 A 0 A_FireCustomMissile("ThrowedNightmareImp", 0, 0, 0, 0)
 		TNT1 A 0 A_TakeInventory("GoSpecial",1)
 		TNT1 A 0 A_TakeInventory("GotMeatShield", 1)
-		TNT1 A 0 A_TakeInventory("HasNightImpShield",1)
+		TNT1 A 0 A_TakeInventory("HasNightmareImpShield",1)
 		TNT1 A 0 A_Giveinventory("Punching",1)
 		TNT1 A 0 A_TakeInventory("GrabbedANightmareImp",1)
 		TNT1 A 0 A_Giveinventory("Punching",1)
@@ -1005,26 +1005,26 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 		TNT1 A 10
 		Goto Ready
 		
-	ShieldNightImp:
+	ShieldNightmareImp:
 		//TNT1 A 0 A_TakeInventory("GrabbedAImp",1)
 		TNT1 A 0 A_TakeInventory("GrabbedAShotgunguy",1)
 		TNT1 A 0 A_TakeInventory("GrabbedAChaingunguy",1)
 		TNT1 A 0 A_TakeInventory("GrabbedAZombieCivilian",1)
 		TNT1 A 0 A_TakeInventory("GrabbedAImp",1)
 		TNT1 A 0 A_TakeInventory("GrabbedANightmareImp",1)
-		TNT1 A 0 A_GiveInventory("NightImpShield",1)
+		TNT1 A 0 A_GiveInventory("NightmareImpShield",1)
 		GRZ8 A 1 offset(0,40)
 		GRZ8 A 1 offset(0,48)
-		TNT1 A 0 A_SelectWeapon("NightImpShield")
+		TNT1 A 0 A_SelectWeapon("NightmareImpShield")
 		TNT1 A 1 A_WeaponReady(WRF_NOFIRE)
 		Goto Ready
 		
-	NightImpDie:
+	NightmareImpDie:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("NightmareImpXDeath", 0, 40)
 		TNT1 A 0 A_TakeInventory("GoSpecial",1)
 		TNT1 A 0 A_TakeInventory("GotMeatShield", 1)
-		TNT1 A 0 A_TakeInventory("HasNightImpShield",1)
+		TNT1 A 0 A_TakeInventory("HasNightmareImpShield",1)
 		TNT1 A 0 A_Giveinventory("Punching",1)
 		TNT1 A 0 A_TakeInventory("GrabbedANightmareImp",1)
 		TNT1 A 0 A_Giveinventory("Punching",1)
