@@ -9,7 +9,7 @@ ACTOR NightmareImpShield : Rifle
 	States
 	{
 	Ready:
-		NSHG A 2 A_WeaponReady
+		ISHG A 2 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("MeatAmmo", 100, 4)
 		TNT1 A 0 A_SpawnItemEx("MeatShield", 15, 0, 15, 0)
 		TNT1 A 0 A_AlertMonsters
@@ -34,23 +34,23 @@ ACTOR NightmareImpShield : Rifle
         TNT1 A 0 A_FireCustomMissile("SmokeSpawner",0,0,0,5)
 		TNT1 A 0 A_FireCustomMissile("MeatShieldTracer", random(3,-3), 0, 3, 0)
 		TNT1 A 0 A_TakeInventory("BDPistolAmmo", 1)
-		NSHF A 1 BRIGHT
-		NSHF BC 1
-		NSHG A 1
+		ISHF A 1 BRIGHT
+		ISHF BC 1
+		ISHG A 1
 		TNT1 A 0
 		Goto Ready
 		
 
     AltFire:
-		GRZ8 D 1 offset(-4, 32)
-		GRZ8 D 1 offset(-9, 33)
-		GRZ8 D 1 offset(-16, 34)
-		GRZ8 D 2 offset(-24, 35)
-		GRZ8 D 3 offset(-36, 48)
-		GRZ8 D 1 offset(-24, 35)
-		GRZ8 B 1 offset(-16, 34)
-		GRZ8 B 1 offset(-9, 33)
-		GRZ8 B 1 offset(-1, 32)
+		GRZ3 D 1 offset(-4, 32)
+		GRZ3 D 1 offset(-9, 33)
+		GRZ3 D 1 offset(-16, 34)
+		GRZ3 D 2 offset(-24, 35)
+		GRZ3 D 3 offset(-36, 48)
+		GRZ3 D 1 offset(-24, 35)
+		GRZ3 B 1 offset(-16, 34)
+		GRZ3 B 1 offset(-9, 33)
+		GRZ3 B 1 offset(-1, 32)
         TNT1 A 0 A_PlaySound("skeleton/swing")
 		TNT1 A 0 A_FireCustomMissile("ThrowedNightmareImp", 0, 0, 0)
 		TNT1 A 0 A_TakeInventory("GoSpecial",1)
@@ -75,7 +75,7 @@ ACTOR NightmareImpShield : Rifle
 	    TNT1 A 0
 		TNT1 A 0 A_SpawnItem("MeatDeath")
 		TNT1 A 0 A_TakeInventory("GoSpecial",1)
-		NSHF DEFGHIJJ 5
+		ISHF DEFGHIJJ 5
 		TNT1 A 0 A_TakeInventory("GoSpecial",1)
 		TNT1 A 0 A_TakeInventory("GotMeatShield", 1)
 		TNT1 A 0 A_TakeInventory("HasNightmareImpShield",1)
@@ -88,7 +88,6 @@ ACTOR NightmareImpShield : Rifle
 
 ACTOR ThrowedNightmareImp: ThrowedZman
 {
-	Renderstyle Subtract
 	States
 	{
 	Spawn:
@@ -125,7 +124,7 @@ ACTOR ThrowedNightmareImp: ThrowedZman
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_SpawnItem("MuchBlood")
 		NULL AA 0 A_CustomMissile ("XDeath1", 0, 0, random (0, 360), 2, random (0, 160))
-		TNT1 A 0 A_SpawnItem("DeadNightmareIMp")
+		TNT1 A 0 A_SpawnItem("DeadIMp")
 		TNT1 A 3
 		Stop
 		
@@ -185,7 +184,6 @@ ACTOR ThrowedNightmareImp2: ThrowedNightmareImp
 
 ACTOR ThrowedNightmareImpDead: ThrowedNightmareImp
 {
- Renderstyle Subtract
 	States
 	{
 	Spawn:
@@ -203,7 +201,6 @@ ACTOR ThrowedNightmareImpDead: ThrowedNightmareImp
 
 ACTOR ExtremePunchedNightmareImp: ThrowedNightmareImp
 {
-	Renderstyle Subtract
 	Radius 10
 	Height 14
 	Speed 30
@@ -256,3 +253,4 @@ ACTOR ExtremePunchedNightmareImp: ThrowedNightmareImp
 		TNT1 A -1
 		Stop
 	}
+}

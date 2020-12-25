@@ -125,7 +125,7 @@ TNT1 A 1900 A_SpawnItem ("Brutal_BloodSpot", 0, 1)
 
 actor LimbBase2: BigGibBase2
 {   
-	Rendertyle Subtract
+	RenderStyle Subtract
 	Radius 6
     Height 10
     Mass 1000
@@ -277,7 +277,7 @@ actor Gib_NightmareSpectreArm: LimbBase2
 
 ACTOR XDeathNightmareSpectreArm1Kicked: XDeathNightmareSpectreArm1
 {
-Renderstyle Subract
+Renderstyle Subtract
 +ACTIVATEMCROSS
 +ACTIVATEIMPACT
 +CANUSEWALLS
@@ -285,7 +285,7 @@ Renderstyle Subract
 
 actor GibNightmareSpectreArmPart: TinyGib2
 {
-		Renderstyle Subract
+	Renderstyle Subtract
     Scale 1.0
     States
     {
@@ -302,7 +302,7 @@ actor GibNightmareSpectreArmPart: TinyGib2
 
 actor GibNightmareSpectreHand: TinyGib2
 {
-		Renderstyle Subract
+	Renderstyle Subtract
     Scale 0.9
     States
     {
@@ -320,7 +320,7 @@ actor GibNightmareSpectreHand: TinyGib2
 
 ACTOR XDeathNightmareImpArm: XDeathArm1
 {
-		Renderstyle Subract
+		Renderstyle Subtract
     Scale 1.1
     Speed 8
 	Gravity 0.4
@@ -344,7 +344,7 @@ ACTOR XDeathNightmareImpArm: XDeathArm1
 
 actor Gib_NightmareImpArm: LimbBase2
 {
-		Renderstyle Subract
+		Renderstyle Subtract
     Scale 1.1
     States
     {

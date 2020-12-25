@@ -104,7 +104,7 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 		PONG A 0 A_FireCustomMissile("StealthAttack", 0, 0, 0, -9)
 		PKUP FG 1
 		TNT1 A 0 A_TakeInventory("PressedUse", 1)
-		Got Jab
+		Goto Jab
 		
 	GrabCheckDist:
 		TNT1 A 0
@@ -167,7 +167,7 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 		TNT1 A 0 A_Takeinventory("FlameCannonSelected",1)
 		TNT1 A 0 A_Takeinventory("HasBarrel",1)
 		TNT1 A 0 A_TakeInventory("TossGrenade", 1)
-		TNT1 A 0 A_TakeInventor("StartDualWield", 1)
+		TNT1 A 0 A_TakeInventory("StartDualWield", 1)
 		TNT1 A 0 A_SetCrosshair(41)
         ////////////////// Check if player is performing a fatality\\\\
 		TNT1 A 0
@@ -626,9 +626,9 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 		PTG3 A 1 Offset(8, 35)
 		PTG3 A 1 Offset(16, 37)
 		PTG3 A 1 Offset(32, 39)
-		TNT1 A 0 A_PlaSound("skeleton/swing")
-		TNT1 A 0 A_TakeInventory(HasImpFatality",10)
-		PTG2 H 1 A_FireCustomMissile)("ThrowedImpDead"0, 0, 0, 0)
+		TNT1 A 0 A_PlaySound("skeleton/swing")
+		TNT1 A 0 A_TakeInventory("HasImpFatality",10)
+		PTG2 H 1 A_FireCustomMissile("ThrowedImpDead",0, 0, 0, 0)
 		PTG2 IJKLMN 1
 		Goto Ready
 	
@@ -1512,7 +1512,7 @@ ACTOR SuperKickAttack: KickAttack
 {
     Damage (random(62,62))
 	-NOEXTREMEDEATH
-	+XTREMEDEATH
+	+EXTREMEDEATH
 	DamageType Extremepunches
 }
 
@@ -1569,7 +1569,7 @@ ACTOR SuperAirKickAttack: KickAttack
 	Radius 20
 	Height 32
 	-NOEXTREMEDEATH
-	+XTREMEDEATH
+	+EXTREMEDEATH
 	DamageType Extremepunches
     Damage (random(95,95))
 		States
@@ -1931,36 +1931,5 @@ ACTOR MeleeStrikeNormalRealism: MeleeStrikeNormal
 ACTOR MeleeStrike2Realism: MeleeStrike2
 {
     Damage (random(5,5))
-
-}5, 0)//(intensity, duration, damrad, tremrad, tid)
-			TNT1 A 10
-			Stop
-			
-			
-	DEath:
-			TNT1 A 0
-		    PUFF A 0 A_PlaySound("player/cyborg/fist", 3)
-			TNT1 A 0 A_SpawnItemEx ("PLOFT2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-			EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
-			TNT1 A 0 A_GiveToTarget("KickHasHit", 1)
-			TNT1 A 0 Radius_Quake (2, 6, 0, 5, 0)//(intensity, duration, damrad, tremrad, tid)
-			TNT1 A 10
-			Stop		
-	
-	
-	}
-}
-
-
-
-
-
-
-
-
-
-ACTOR SuperKickAttackRealism: SuperKickAttack
-{
-    Damage (random(16,16))
 
 }
