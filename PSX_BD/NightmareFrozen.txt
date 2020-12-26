@@ -1,4 +1,4 @@
-ACTOR FrozenNightmare
+ACTOR FrozenNightmareSpectre
 {
 Radius 22
 Height 52

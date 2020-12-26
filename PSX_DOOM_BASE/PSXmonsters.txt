@@ -96,7 +96,7 @@ ACTOR PSXNightmareImpBall : DoomImpBall
 
 }
 
-Dead imp ----------------------------------------------------------------
+// Dead imp ----------------------------------------------------------------
 
 actor DeadPSXNightmareImp : PSXNightmareImp
 {
