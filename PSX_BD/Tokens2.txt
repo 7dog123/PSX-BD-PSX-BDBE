@@ -3,6 +3,11 @@ Actor HasNightmareImpShield : Inventory
 inventory.maxamount 1
 }
 
+Actor HasNightmareImpFatality: Inventory
+{
+inventory.maxamount 1
+}
+
 Actor SKNightmareImp : Inventory
 {
 inventory.maxamount 1

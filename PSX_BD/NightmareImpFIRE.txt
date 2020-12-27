@@ -10,7 +10,6 @@ ACTOR FlameTrails3
     +CLIENTSIDEONLY
     +THRUACTORS
 	+DOOMBOUNCE
-	RenderStyle Add
 	RenderStyle Subtract
     DamageType fire
     Scale 0.5
@@ -51,9 +50,9 @@ ACTOR FireballExplosionFlames2: FlameTrails3
 	}
 }
 
-ACTOR NightImBallGettingReady: FlameTrails2
+ACTOR NightImBallGettingReady: FlameTrails3
 {
-	+NOINTERACION
+	+NOINTERACTION
 	+NOCLIP
     Scale .5
     Speed 1

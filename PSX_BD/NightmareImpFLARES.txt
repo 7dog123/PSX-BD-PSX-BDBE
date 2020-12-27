@@ -4,7 +4,7 @@ Renderstyle Subtract
 +NOINTERACTION
 +NOGRAVITY
 +CLIENTSIDEONLY
-+NOTAUTOMAP
++NOTONAUTOMAP
 renderstyle Add
 radius 1
 height 1
@@ -13,7 +13,7 @@ scale 0.4
 }
 
 
-Actor NightareImpFireballFlare : Flare_General2
+Actor NightmareImpFireballFlare : Flare_General2
 {
 alpha 0.6
 scale 0.15
