@@ -1,5 +1,4 @@
 #include "BurnNightmare.txt"
-#include "BurningNightmare.txt"
 #include "DyingNightmare.txt"
 #include "FrozenNightmare.txt"
 #include "NightmareExecutions.txt"

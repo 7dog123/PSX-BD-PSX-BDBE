@@ -607,10 +607,7 @@ TNT1 A 0 A_SpawnItem("GrowingBloodPool")
          TNT1 A 1 A_SpawnItem ("BrutalizedNightmareImpStop3", 5)
 		 Stop}}
 	   
-		
-ACTOR ThisNightmareImpGotFuckedHard: DeadNightmareImpID17G
-{Renderstyle Subtract Health 200 
-}
+	
 		
 	
 	
@@ -884,7 +881,7 @@ Stop
 
 
 
-ACTOR NightmareImpDyingOfBloodLoss : NightmareImp
+ACTOR NightmareImpDyingOfBloodLoss : PSXNightmareImp
 {
 	Renderstyle Subtract
 	Radius 16
@@ -925,7 +922,7 @@ ACTOR NightmareImpDyingOfBloodLoss : NightmareImp
 
 
 
-ACTOR PoorNightmareSpectreLostHisArm: NightmareSpectre
+ACTOR PoorNightmareSpectreLostHisArm: PSXNightmareSpectre
 {
 	Renderstyle Subtract
 	Health 50

@@ -3,7 +3,7 @@
 // Nightmare Spectre
 //
 //===========================================================================
-ACTOR PSXNightmareSpetre : Demon 3000
+ACTOR PSXNightmareSpectre : Demon 3000
 {
 	Health 300
 	PainChance 180
@@ -57,7 +57,7 @@ ACTOR PSXNightmareSpetre : Demon 3000
 //
 //===========================================================================
 
-ACTOR PSXNightmareImp : DoomImp 3007
+ACTOR PSXNightmareImp : Imp
 {
 	Health 60
 	PainChance 100
@@ -70,7 +70,7 @@ ACTOR PSXNightmareImp : DoomImp 3007
 	Missile:
 		TROO EF 9 A_FaceTarget
 		TROO G 7 A_CustomComboAttack ("PSXNightmareImpBall", 32, random(1, 8)*3, "imp/melee", "", 1)
-		Goto CheckTarget
+		Goto See
 	}
 }
 
@@ -110,7 +110,7 @@ actor DeadPSXNightmareImp : PSXNightmareImp
 
 // Dead demon --------------------------------------------------------------
 
-actor DeadPSXNightmareSpetre : PSXNightmareSpetre
+actor DeadPSXNightmareSpectre : PSXNightmareSpectre
 {
 	Skip_Super
 	States

@@ -107,26 +107,26 @@ Spawn:
         TNT1 A 0 A_JumpIfCloser(170, "Melee")
 		TNT1 A 0 A_Playsound ("IMPCHARG")
         TNT1 A 0 A_CustomMissile ("BUBULZ", 35, 30, random (0, 40), 2, random (0, 160))
-        TNT1 A 0 A_CustomMissile ("NightImBallGettingReady", 35, 30, random (0, 140), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("NightmareImpBallGettingReady", 35, 30, random (0, 140), 2, random (0, 160))
 		IUSA A 2 A_FaceTarget
 		
 		        TNT1 A 0 A_CustomMissile ("BUBULZ", 25, 30, random (0, 40), 2, random (0, 160))
-        TNT1 A 0 A_CustomMissile ("NightImBallGettingReady", 25, 30, random (0, 140), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("NightmareImpBallGettingReady", 25, 30, random (0, 140), 2, random (0, 160))
 		IUSA A 2 A_FaceTarget
 		        TNT1 A 0 A_CustomMissile ("BUBULZ", 25, 30, random (0, 40), 2, random (0, 160))
-        TNT1 A 0 A_CustomMissile ("NightImBallGettingReady", 25, 30, random (0, 140), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("NightmareImpBallGettingReady", 25, 30, random (0, 140), 2, random (0, 160))
 		IUSA A 2 A_FaceTarget
 		        TNT1 A 0 A_CustomMissile ("BUBULZ", 25, 30, random (0, 40), 2, random (0, 160))
-        TNT1 A 0 A_CustomMissile ("NightImBallGettingReady", 25, 30, random (0, 140), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("NightmareImpBallGettingReady", 25, 30, random (0, 140), 2, random (0, 160))
 		IUSA A 2 A_FaceTarget
 		        TNT1 A 0 A_CustomMissile ("BUBULZ", 25, 30, random (0, 40), 2, random (0, 160))
-        TNT1 A 0 A_CustomMissile ("NightImBallGettingReady", 25, 30, random (0, 140), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("NightmareImpBallGettingReady", 25, 30, random (0, 140), 2, random (0, 160))
 		IUSA A 2 A_FaceTarget
 		TNT1 A 0 A_CustomMissile ("BUBULZ", 25, 30, random (0, 40), 2, random (0, 160))
-        TNT1 A 0 A_CustomMissile ("NightImBallGettingReady", 25, 30, random (0, 140), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("NightmareImpBallGettingReady", 25, 30, random (0, 140), 2, random (0, 160))
 
 		IUSA B 2 A_FaceTarget
-		IUSA E 6 A_CustomMissile("NightFireBall_", 34, 0, 0, 0) 
+		IUSA E 6 A_CustomMissile("NightmareImpFireBall", 34, 0, 0, 0) 
 		TNT1 A 0 A_JumpIf(waterlevel < 1, "JumpOutOfWater")
 		IUSA B 4
 		Goto See

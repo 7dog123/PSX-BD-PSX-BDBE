@@ -50,7 +50,7 @@ ACTOR FireballExplosionFlames2: FlameTrails3
 	}
 }
 
-ACTOR NightImBallGettingReady: FlameTrails3
+ACTOR NightmareImpBallGettingReady: FlameTrails3
 {
 	+NOINTERACTION
 	+NOCLIP
@@ -133,4 +133,20 @@ ACTOR TinyBurningPiece6: TinyBurningPiece5
 	Scale 0.5
 	+CLIENTSIDEONLY
 	Renderstyle Subtract
+}
+
+ACTOR FireBallExplosion2: FlameTrails3
+{
+Renderstyle Subtract
+Scale 1.6
+	States
+	{
+    Spawn:
+        //FRFX KKKLLLMMMNNN 3 BRIGHT A_SpawnItem("RedFlareMedium",0,0)
+        //FRFX OOOPP 3 BRIGHT
+
+        FX98 ABCDEFGHIJKL 1 BRIGHT A_SpawnItem("YellowFlare2",0,0)
+        FX98 MNOPQ 1
+        Stop
+	}
 }

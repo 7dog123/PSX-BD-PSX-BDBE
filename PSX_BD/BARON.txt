@@ -910,7 +910,7 @@ ACTOR BaronofHell2 : BaronofHell Replaces BaronofHell
  
 	   3HF1 STUUU 10 A_CustomMissile ("MuchBlood", 25, 0, random (0, 360), 2, random (0, 160))
 	   
-        TNT1 A 0 A_SpawnItem ("DeadNigtmareHalf", 1)
+        TNT1 A 0 A_SpawnItem ("DeadNightmareSpectreHalf", 1)
 		TNT1 A 0 A_SpawnItem ("GreenGrowingBloodPool")
 		 
         TNT1 A 0 A_TakeInventory("NightmareSpectreFatality",1)
