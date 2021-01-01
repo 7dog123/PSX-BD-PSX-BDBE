@@ -1,13 +1,5 @@
-Actor PSXBloodyChain : BDECchainHook 15856 //replaces Archvile
+Actor PSXBloodyChain : BDECchainHook
 {
 	Radius 16
 	Height 88
-	+NOGRAVITY
-	+SPAWNCEILING
-	States
-	{
-	Spawn:
-		BLCH A -1
-		Stop
-	}
 }

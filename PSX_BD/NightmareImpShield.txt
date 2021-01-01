@@ -124,7 +124,7 @@ ACTOR ThrowedNightmareImp: ThrowedZman
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_SpawnItem("MuchBlood")
 		NULL AA 0 A_CustomMissile ("XDeath1", 0, 0, random (0, 360), 2, random (0, 160))
-		TNT1 A 0 A_SpawnItem("DeadIMp")
+		TNT1 A 0 A_SpawnItem("DeadNightmareImp")
 		TNT1 A 3
 		Stop
 		
@@ -254,3 +254,4 @@ ACTOR ExtremePunchedNightmareImp: ThrowedNightmareImp
 		Stop
 	}
 }
+

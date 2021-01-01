@@ -638,7 +638,7 @@ ACTOR Melee_Attacks : BrutalWeapon Replaces Fist
 		PTG4 A 1 Offset(16, 37)
 		PTG3 A 1 Offset(32, 39)
 		TNT1 A 0 A_PlaySound("skeleton/swing")
-		TNT1 A 0 A_TakeInventory("HasImpFatality",10)
+		TNT1 A 0 A_TakeInventory("HasNightmareImpFatality",10)
 		PTG2 H 1 A_FireCustomMissile("ThrowedNightmareImpDead",0, 0, 0, 0)
 		PTG2 IJKLMN 1
 		Goto Ready

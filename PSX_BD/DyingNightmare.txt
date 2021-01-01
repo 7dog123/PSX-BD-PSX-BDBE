@@ -881,7 +881,7 @@ Stop
 
 
 
-ACTOR NightmareImpDyingOfBloodLoss : PSXNightmareImp
+ACTOR NightmareImpDyingOfBloodLoss : NightmareImp
 {
 	Renderstyle Subtract
 	Radius 16
@@ -922,7 +922,7 @@ ACTOR NightmareImpDyingOfBloodLoss : PSXNightmareImp
 
 
 
-ACTOR PoorNightmareSpectreLostHisArm: PSXNightmareSpectre
+ACTOR PoorNightmareSpectreLostHisArm: NightmareSpectre
 {
 	Renderstyle Subtract
 	Health 50
