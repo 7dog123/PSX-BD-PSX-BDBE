@@ -1,5 +1,4 @@
-Actor PSXBloodyChain : BDECchainHook
+Actor PSXBloodyChain : BDECchainHook replaces Archvile
 {
-	Radius 16
-	Height 88
+
 }
